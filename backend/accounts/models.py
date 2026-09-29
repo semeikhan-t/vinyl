@@ -1,11 +1,12 @@
 from django.db import models
-from django.utils.duration import datetime
+from django.utils import timezone
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
-class User(models.Model):
+
+class User(AbstractUser):
     username = models.CharField(max_length = 30, unique = True)
     email = models.EmailField(unique = True)
-    date_joined = models.DateTimeField(default=datetime.now())
+    date_joined = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return self.username
