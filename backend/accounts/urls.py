@@ -7,5 +7,6 @@ urlpatterns = [
     path('auth/register/', views.RegisterView.as_view()),
     path('auth/token/', TokenObtainPairView.as_view()),
     path('auth/token/refresh/', TokenRefreshView.as_view()),
-    path('auth/logout/', views.TokenBlacklistView.as_view())
+    path('auth/logout/', views.TokenBlacklistView.as_view()),
+    path('me/', views.AuthMeView.as_view()),
 ]
